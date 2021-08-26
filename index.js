@@ -15,9 +15,17 @@ app.get('/', function (req, res) {
 
 app.post('/format', urlencodedParser, function (req, res) {
 
-var str = req.body.text
+var str = req.body.text;
 
 
+var result = str.replace('/|/gi', ',');
+
+// let result = str.replace(/[========== Info ==========]|[========== END ==========]/gi, function (x) {
+//     return '';
+//   });
+
+
+res.send(result);
 
 
 
