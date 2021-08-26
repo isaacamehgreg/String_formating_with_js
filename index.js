@@ -14,7 +14,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/format', urlencodedParser, function (req, res) {
-console.log(req.body.text);
+
+var str = req.body.text
 
 
 
