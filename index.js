@@ -33,10 +33,6 @@ var start= "";
         start = splited[index + 2].concat(splited[index + 5].concat(splited[index + 7]))
         var stringWithoutLineBreaks = start.replace(/(\r\n|\n|\r)/gm, "");
         data = data.concat(stringWithoutLineBreaks.concat("\n"))
-       
-   
- 
-    
          
       }
 
@@ -46,8 +42,8 @@ var start= "";
 
   console.log(data);
 
+  res.render('result', {data:data});
 
- res.render('result', {data:data});
 })
  
 
