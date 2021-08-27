@@ -17,29 +17,37 @@ app.post('/format', urlencodedParser, function (req, res) {
 
 var str = req.body.text;
 
+var data = "";
+var start= "";
 
-var result = str.search('[========== Info ==========]');
+  splited = str.split(' ');
+  //console.log(splited);
 
-// let result = str.replace(/[========== Info ==========]|[========== END ==========]/gi, function (x) {
-//     return '';
-//   });
+  //console.log(splited[12]);
 
+  splited.forEach(function(item, index) {
+   //   console.log(index, item);
+    var info = ''
+      if(item === 'birth'){
 
-
-
-
-    index = str.search('[========== Info ==========]');
-  //  var re = str.trim();
-    rep = str.match(/[========== Info ==========]/g);
-
-  console.log(rep)
+        start = splited[index + 2].concat(splited[index + 5].concat(splited[index + 7]))
+        var stringWithoutLineBreaks = start.replace(/(\r\n|\n|\r)/gm, "");
+        data = data.concat(stringWithoutLineBreaks.concat("\n"))
+       
    
+ 
+    
+         
+      }
+
+     
+
+  })
+
+  console.log(data);
 
 
- //res.send(rep);
-
-
- //res.render('result');
+ res.render('result', {data:data});
 })
  
 
