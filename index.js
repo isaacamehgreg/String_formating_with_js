@@ -27,19 +27,19 @@ var result = str.search('[========== Info ==========]');
 
 
 
-while(str.includes("[========== Info ==========]")){
+
     index = str.search('[========== Info ==========]');
-    str.length
-    rep = str.replace("[========== Info ==========]",'')
+  //  var re = str.trim();
+    rep = str.match(/[========== Info ==========]/g);
 
   console.log(rep)
    
-}
-
- res.send(rep);
 
 
- res.render('result');
+ //res.send(rep);
+
+
+ //res.render('result');
 })
  
 
