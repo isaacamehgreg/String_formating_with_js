@@ -18,16 +18,25 @@ app.post('/format', urlencodedParser, function (req, res) {
 var str = req.body.text;
 
 
-var result = str.replace('/|/gi', ',');
+var result = str.search('[========== Info ==========]');
 
 // let result = str.replace(/[========== Info ==========]|[========== END ==========]/gi, function (x) {
 //     return '';
 //   });
 
 
-res.send(result);
 
 
+while(str.includes("[========== Info ==========]")){
+    index = str.search('[========== Info ==========]');
+    str.length
+    rep = str.replace("[========== Info ==========]",'')
+
+  console.log(rep)
+   
+}
+
+ res.send(rep);
 
 
  res.render('result');
